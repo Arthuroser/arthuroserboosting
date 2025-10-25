@@ -7,7 +7,14 @@
 <meta name="description" content="Formules Duo Play Fortnite par Arthuroser — Unreal, Top 30 000 ou Par Rang avec calculateur de prix.">
 <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700;900&family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 <style>
-:root {--bg:#0b0c10;--panel:#111827;--neon:#ff1a1a;--muted:#bfc7d1;--white:#ffffff;}
+:root {
+  --bg:#0b0c10;
+  --panel:#111827;
+  --neon:#ff1a1a;
+  --muted:#bfc7d1;
+  --white:#ffffff;
+  --green:#00ff7f; /* style billet vert */
+}
 * {box-sizing:border-box;margin:0;padding:0;font-family:"Poppins",sans-serif;}
 body {background:var(--bg);color:var(--muted);min-height:100vh;display:flex;flex-direction:column;}
 header {background:linear-gradient(180deg, rgba(255,0,0,0.04), transparent);padding:18px 28px;display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid rgba(255,0,0,0.1);}
@@ -17,16 +24,16 @@ header {background:linear-gradient(180deg, rgba(255,0,0,0.04), transparent);padd
 nav a {color:var(--white);margin-left:14px;padding:8px 12px;border-radius:8px;font-weight:600;text-decoration:none;}
 nav a:hover {background:var(--neon);color:#111;}
 main {width:100%;max-width:1100px;margin:40px auto;padding:0 18px;flex:1;}
-h1 {color:var(--neon);font-size:2.6rem;text-shadow:0 0 8px rgba(255,26,26,0.25);margin-bottom:12px;}
-table {width:100%;border-collapse:collapse;margin-top:30px;}
-th, td {padding:14px 10px;text-align:center;border:1px solid rgba(255,26,26,0.2);}
-th {background:rgba(255,0,0,0.1);color:var(--neon);}
-td {background:var(--panel);}
-.price {font-weight:800;color:var(--white);}
+h1 {color:var(--neon);font-size:2.6rem;text-shadow:0 0 8px rgba(255,26,26,0.25);margin-bottom:24px;}
+.tableau {display:flex;gap:20px;flex-wrap:wrap;justify-content:center;}
+.card {background:var(--panel);border-radius:12px;padding:20px;border:1px solid rgba(255,0,0,0.15);box-shadow:0 0 15px rgba(255,0,0,0.1);flex:1;min-width:220px;display:flex;flex-direction:column;align-items:center;}
+.card h3 {color:var(--neon);margin-bottom:10px;font-size:1.4rem;text-align:center;}
+.card p {color:var(--muted);font-size:0.95rem;margin-bottom:12px;line-height:1.4;text-align:center;}
+.price {font-weight:800;color:var(--green);font-size:1.6rem;margin:12px 0;}
 input[type=number] {width:70px;padding:6px;border-radius:6px;border:1px solid rgba(255,255,255,0.1);background:#0f1114;color:var(--white);}
-.cta {display:inline-block;background:var(--neon);color:#111;padding:8px 14px;border-radius:8px;font-weight:800;border:none;cursor:pointer;text-decoration:none;margin-top:6px;}
+.cta {display:inline-block;background:var(--neon);color:#111;padding:10px 16px;border-radius:8px;font-weight:800;border:none;cursor:pointer;text-decoration:none;margin-top:12px;text-align:center;}
 .cta:hover {box-shadow:0 0 20px rgba(255,26,26,0.4);}
-.total {margin-top:20px;font-size:1.3rem;color:var(--neon);text-align:right;}
+.total {margin-top:16px;font-size:1.25rem;color:var(--neon);}
 footer {padding:22px;border-top:1px solid rgba(255,0,0,0.1);text-align:center;color:#9aa3ad;}
 </style>
 </head>
@@ -43,42 +50,32 @@ footer {padding:22px;border-top:1px solid rgba(255,0,0,0.1);text-align:center;co
 <main>
 <h1>Formules Duo Play</h1>
 
-<table>
-<tr>
-<th>Formule</th>
-<th>Description</th>
-<th>Prix</th>
-<th>Quantité</th>
-<th>Choisir</th>
-</tr>
+<div class="tableau">
+  <!-- Duo Play Unreal -->
+  <div class="card">
+    <h3>Duo Play Unreal</h3>
+    <p>Atteindre directement le rang Unreal.</p>
+    <div class="price">9,99 €</div>
+    <a class="cta" href="contact.html">Choisir cette formule</a>
+  </div>
 
-<tr>
-<td>Duo Play Unreal</td>
-<td>Atteindre directement le rang Unreal</td>
-<td class="price">9,99 €</td>
-<td>-</td>
-<td><a class="cta" href="contact.html">Choisir</a></td>
-</tr>
+  <!-- Duo Play Top 30 000 -->
+  <div class="card">
+    <h3>Duo Play Top 30 000</h3>
+    <p>Atteindre le Top 30 000.</p>
+    <div class="price">5,99 €</div>
+    <a class="cta" href="contact.html">Choisir cette formule</a>
+  </div>
 
-<tr>
-<td>Duo Play Top 30 000</td>
-<td>Atteindre le Top 30 000</td>
-<td class="price">5,99 €</td>
-<td>-</td>
-<td><a class="cta" href="contact.html">Choisir</a></td>
-</tr>
-
-<tr>
-<td>Duo Play Par Rang</td>
-<td>Prix par rang, nombre à choisir</td>
-<td class="price">2,50 € / rang</td>
-<td><input type="number" id="qte" value="1" min="1"></td>
-<td><a class="cta" href="contact.html">Choisir</a></td>
-</tr>
-</table>
-
-<div class="total">
-Total estimé : <span id="total">2,50 €</span>
+  <!-- Duo Play Par Rang -->
+  <div class="card">
+    <h3>Duo Play Par Rang</h3>
+    <p>Prix par rang, nombre à choisir.</p>
+    <div class="price">2,50 € / rang</div>
+    <input type="number" id="qte" value="1" min="1">
+    <div class="total">Total : <span id="total">2,50 €</span></div>
+    <a class="cta" href="contact.html">Choisir cette formule</a>
+  </div>
 </div>
 
 </main>
@@ -91,17 +88,12 @@ Total estimé : <span id="total">2,50 €</span>
 const q = document.getElementById('qte');
 const total = document.getElementById('total');
 const pricePerRank = 2.5;
-
 function updateTotal() {
   let qty = parseInt(q.value)||0;
   total.textContent = (qty*pricePerRank).toFixed(2).replace('.',',')+" €";
 }
-
 q.addEventListener('input',updateTotal);
 updateTotal();
 </script>
 </body>
 </html>
-
-
-

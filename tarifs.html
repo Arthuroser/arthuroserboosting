@@ -18,19 +18,15 @@ nav a {color:var(--white);margin-left:14px;padding:8px 12px;border-radius:8px;fo
 nav a:hover {background:var(--neon);color:#111;}
 main {width:100%;max-width:1100px;margin:40px auto;padding:0 18px;flex:1;}
 h1 {color:var(--neon);font-size:2.6rem;text-shadow:0 0 8px rgba(255,26,26,0.25);margin-bottom:12px;}
-.grid {display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:20px;}
-.card {background:var(--panel);border-radius:12px;padding:20px;border:1px solid rgba(255,0,0,0.15);box-shadow:0 0 15px rgba(255,0,0,0.1);display:flex;flex-direction:column;justify-content:space-between;}
-.card h3 {color:var(--neon);margin-bottom:10px;font-size:1.3rem;}
-.card p {color:var(--muted);font-size:0.95rem;margin-bottom:12px;line-height:1.4;}
-.price {font-weight:800;color:var(--white);font-size:1.4rem;margin:10px 0;}
-.cta {display:inline-block;background:var(--neon);color:#111;padding:10px 16px;border-radius:8px;font-weight:800;border:none;cursor:pointer;text-decoration:none;margin-top:auto;text-align:center;}
+table {width:100%;border-collapse:collapse;margin-top:30px;}
+th, td {padding:14px 10px;text-align:center;border:1px solid rgba(255,26,26,0.2);}
+th {background:rgba(255,0,0,0.1);color:var(--neon);}
+td {background:var(--panel);}
+.price {font-weight:800;color:var(--white);}
+input[type=number] {width:70px;padding:6px;border-radius:6px;border:1px solid rgba(255,255,255,0.1);background:#0f1114;color:var(--white);}
+.cta {display:inline-block;background:var(--neon);color:#111;padding:8px 14px;border-radius:8px;font-weight:800;border:none;cursor:pointer;text-decoration:none;margin-top:6px;}
 .cta:hover {box-shadow:0 0 20px rgba(255,26,26,0.4);}
-.calculator {margin-top:40px;background:rgba(255,255,255,0.02);padding:20px;border-radius:12px;border:1px dashed rgba(255,0,0,0.2);}
-.row {display:flex;gap:12px;align-items:center;margin-bottom:12px;flex-wrap:wrap;}
-.row label {min-width:150px;color:var(--muted);font-weight:600;}
-input[type=number] {flex:1;padding:10px;border-radius:8px;border:1px solid rgba(255,255,255,0.1);background:#0f1114;color:var(--white);}
-.total {display:flex;justify-content:space-between;align-items:center;padding:14px;background:#0b0d10;border-radius:10px;border:1px solid rgba(255,0,0,0.2);margin-top:10px;}
-.sum {font-size:1.35rem;font-weight:800;color:var(--neon);}
+.total {margin-top:20px;font-size:1.3rem;color:var(--neon);text-align:right;}
 footer {padding:22px;border-top:1px solid rgba(255,0,0,0.1);text-align:center;color:#9aa3ad;}
 </style>
 </head>
@@ -47,42 +43,42 @@ footer {padding:22px;border-top:1px solid rgba(255,0,0,0.1);text-align:center;co
 <main>
 <h1>Formules Duo Play</h1>
 
-<div class="grid">
-<div class="card">
-<h3>Duo Play Unreal</h3>
-<p>Atteindre directement le rang Unreal.</p>
-<div class="price">9,99 €</div>
-<a class="cta" href="contact.html">Choisir cette formule</a>
-</div>
+<table>
+<tr>
+<th>Formule</th>
+<th>Description</th>
+<th>Prix</th>
+<th>Quantité</th>
+<th>Choisir</th>
+</tr>
 
-<div class="card">
-<h3>Duo Play Top 30 000</h3>
-<p>Atteindre le Top 30 000.</p>
-<div class="price">5,99 €</div>
-<a class="cta" href="contact.html">Choisir cette formule</a>
-</div>
+<tr>
+<td>Duo Play Unreal</td>
+<td>Atteindre directement le rang Unreal</td>
+<td class="price">9,99 €</td>
+<td>-</td>
+<td><a class="cta" href="contact.html">Choisir</a></td>
+</tr>
 
-<div class="card">
-<h3>Duo Play Par Rang</h3>
-<p>Prix par rang, nombre à choisir ci-dessous.</p>
-<div class="price">2,50 € / rang</div>
-</div>
-</div>
+<tr>
+<td>Duo Play Top 30 000</td>
+<td>Atteindre le Top 30 000</td>
+<td class="price">5,99 €</td>
+<td>-</td>
+<td><a class="cta" href="contact.html">Choisir</a></td>
+</tr>
 
-<div class="calculator">
-<h3 style="color:var(--neon);margin-bottom:10px;">Calculateur Par Rang</h3>
-
-<div class="row">
-<label for="qte">Nombre de rangs</label>
-<input type="number" id="qte" value="1" min="1" placeholder="Quantité">
-</div>
+<tr>
+<td>Duo Play Par Rang</td>
+<td>Prix par rang, nombre à choisir</td>
+<td class="price">2,50 € / rang</td>
+<td><input type="number" id="qte" value="1" min="1"></td>
+<td><a class="cta" href="contact.html">Choisir</a></td>
+</tr>
+</table>
 
 <div class="total">
-<span>Total estimé</span>
-<span class="sum" id="total">0,00 €</span>
-</div>
-
-<a class="cta" href="contact.html">Choisir cette formule</a>
+Total estimé : <span id="total">2,50 €</span>
 </div>
 
 </main>
@@ -106,5 +102,6 @@ updateTotal();
 </script>
 </body>
 </html>
+
 
 

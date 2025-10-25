@@ -23,15 +23,14 @@ h1 {color:var(--neon);font-size:2.6rem;text-shadow:0 0 8px rgba(255,26,26,0.25);
 .card h3 {color:var(--neon);margin-bottom:10px;font-size:1.3rem;}
 .card p {color:var(--muted);font-size:0.95rem;margin-bottom:12px;line-height:1.4;}
 .price {font-weight:800;color:var(--white);font-size:1.4rem;margin:10px 0;}
-.cta {display:inline-block;background:var(--neon);color:#111;padding:10px 16px;border-radius:8px;font-weight:800;border:none;cursor:pointer;text-decoration:none;text-align:center;}
+.cta {display:inline-block;background:var(--neon);color:#111;padding:10px 16px;border-radius:8px;font-weight:800;border:none;cursor:pointer;text-decoration:none;text-align:center;margin-top:auto;}
 .cta:hover {box-shadow:0 0 20px rgba(255,26,26,0.4);}
 .calculator {margin-top:40px;background:rgba(255,255,255,0.02);padding:20px;border-radius:12px;border:1px dashed rgba(255,0,0,0.2);}
 .row {display:flex;gap:12px;align-items:center;margin-bottom:12px;flex-wrap:wrap;}
 .row label {min-width:150px;color:var(--muted);font-weight:600;}
-select,input[type=number] {flex:1;padding:10px;border-radius:8px;border:1px solid rgba(255,255,255,0.1);background:#0f1114;color:var(--white);}
+input[type=number] {flex:1;padding:10px;border-radius:8px;border:1px solid rgba(255,255,255,0.1);background:#0f1114;color:var(--white);}
 .total {display:flex;justify-content:space-between;align-items:center;padding:14px;background:#0b0d10;border-radius:10px;border:1px solid rgba(255,0,0,0.2);margin-top:10px;}
 .sum {font-size:1.35rem;font-weight:800;color:var(--neon);}
-#downloadBtn {margin-top:15px;display:inline-block;}
 footer {padding:22px;border-top:1px solid rgba(255,0,0,0.1);text-align:center;color:#9aa3ad;}
 </style>
 </head>
@@ -83,7 +82,7 @@ footer {padding:22px;border-top:1px solid rgba(255,0,0,0.1);text-align:center;co
 <span class="sum" id="total">0,00 €</span>
 </div>
 
-<a id="downloadBtn" class="cta" href="contact.html">Choisir cette formule</a>
+<a class="cta" href="contact.html">Choisir cette formule</a>
 </div>
 
 </main>

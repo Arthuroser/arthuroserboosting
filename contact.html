@@ -4,17 +4,64 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Contact — Arthuroser Boosting</title>
-<meta name="description" content="Contacte Arthuroser pour tes sessions Duo Play Fortnite. Numéro et TikTok disponibles.">
+<meta name="description" content="Contactez Arthuroser pour Duo Play Fortnite, Unreal et Top 30 000.">
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700;900&family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 <style>
-body{font-family:sans-serif;background:#0b0c10;color:#bfc7d1;display:flex;flex-direction:column;align-items:center;padding:40px;}
-h1{color:#ff1a1a;margin-bottom:20px;}
-a{color:#ff1a1a;text-decoration:none;font-weight:800;margin:10px 0;display:inline-block;}
-a:hover{text-decoration:underline;}
+:root {
+  --bg:#0b0c10;
+  --panel:#111827;
+  --neon:#ff1a1a;
+  --muted:#bfc7d1;
+  --white:#ffffff;
+  --green:#00ff7f;
+}
+* {box-sizing:border-box;margin:0;padding:0;font-family:"Poppins",sans-serif;}
+body {background:var(--bg);color:var(--muted);min-height:100vh;display:flex;flex-direction:column;}
+header {background:linear-gradient(180deg, rgba(255,0,0,0.04), transparent);padding:18px 28px;display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid rgba(255,0,0,0.1);}
+.logo {font-family:'Orbitron',sans-serif;font-weight:900;font-size:1.9rem;}
+.logo .a {color:var(--neon);text-shadow:0 0 8px rgba(255,26,26,0.5);}
+.logo .rest {color:var(--white);}
+nav a {color:var(--white);margin-left:14px;padding:8px 12px;border-radius:8px;font-weight:600;text-decoration:none;}
+nav a:hover {background:var(--neon);color:#111;}
+main {width:100%;max-width:800px;margin:40px auto;padding:0 18px;flex:1;}
+h1 {color:var(--neon);font-size:2.6rem;text-shadow:0 0 8px rgba(255,26,26,0.25);margin-bottom:16px;}
+p {margin-bottom:16px;line-height:1.5;font-size:1rem;}
+a.email {color:var(--green);font-weight:800;text-decoration:none;}
+a.email:hover {text-decoration:underline;}
+footer {padding:22px;border-top:1px solid rgba(255,0,0,0.1);text-align:center;color:#9aa3ad;}
+.cta {display:inline-block;background:var(--neon);color:#111;padding:10px 18px;border-radius:8px;font-weight:800;border:none;cursor:pointer;text-decoration:none;margin-top:12px;text-align:center;}
+.cta:hover {box-shadow:0 0 20px rgba(255,26,26,0.4);}
+section {margin-top:24px;}
 </style>
 </head>
 <body>
-<h1>Contacte Arthuroser</h1>
-<p>Numéro : <a href="tel:+33661391645">06 61 39 16 45</a></p>
-<p>TikTok : <a href="https://www.tiktok.com/@arthuroser8" target="_blank">@arthuroser8</a></p>
+<header>
+<div class="logo"><span class="a">A</span><span class="rest">rthuroser</span></div>
+<nav>
+<a href="index.html">Accueil</a>
+<a href="tarifs.html">Tarifs</a>
+<a href="contact.html">Contact</a>
+</nav>
+</header>
+
+<main>
+<h1>Contactez-moi</h1>
+
+<section>
+<p>Vous souhaitez réserver une session Duo Play ou obtenir plus d’informations ?</p>
+<p>Vous pouvez me contacter directement par e-mail :</p>
+<p><a class="email" href="mailto:arthuroser@example.com">arthuroser@example.com</a></p>
+</section>
+
+<section>
+<p>Je réponds rapidement et je m’assure que chaque session vous permette d’atteindre vos objectifs : Unreal, Top 30 000 ou Par Rang.</p>
+<a class="cta" href="tarifs.html">Voir les formules</a>
+</section>
+
+</main>
+
+<footer>
+© 2025 Arthuroser Boosting – Service indépendant d’Epic Games
+</footer>
 </body>
 </html>

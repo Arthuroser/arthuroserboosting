@@ -18,7 +18,6 @@ nav a {color:var(--white);margin-left:14px;padding:8px 12px;border-radius:8px;fo
 nav a:hover {background:var(--neon);color:#111;}
 main {width:100%;max-width:1100px;margin:40px auto;padding:0 18px;flex:1;}
 h1 {color:var(--neon);font-size:2.6rem;text-shadow:0 0 8px rgba(255,26,26,0.25);margin-bottom:12px;}
-.lead {color:var(--muted);margin-bottom:24px;font-size:1.05rem;}
 .grid {display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:20px;}
 .card {background:var(--panel);border-radius:12px;padding:20px;border:1px solid rgba(255,0,0,0.15);box-shadow:0 0 15px rgba(255,0,0,0.1);display:flex;flex-direction:column;justify-content:space-between;}
 .card h3 {color:var(--neon);margin-bottom:10px;font-size:1.3rem;}
@@ -33,7 +32,6 @@ select,input[type=number] {flex:1;padding:10px;border-radius:8px;border:1px soli
 .total {display:flex;justify-content:space-between;align-items:center;padding:14px;background:#0b0d10;border-radius:10px;border:1px solid rgba(255,0,0,0.2);margin-top:10px;}
 .sum {font-size:1.35rem;font-weight:800;color:var(--neon);}
 #downloadBtn {margin-top:15px;display:inline-block;}
-.disclaimer {margin-top:25px;color:#9aa3ad;font-size:0.9rem;background:rgba(255,0,0,0.05);padding:14px;border-radius:10px;border:1px solid rgba(255,0,0,0.1);}
 footer {padding:22px;border-top:1px solid rgba(255,0,0,0.1);text-align:center;color:#9aa3ad;}
 </style>
 </head>
@@ -49,59 +47,35 @@ footer {padding:22px;border-top:1px solid rgba(255,0,0,0.1);text-align:center;co
 
 <main>
 <h1>Formules Duo Play</h1>
-<p class="lead">Choisis la formule adaptée à ton objectif. Certaines formules peuvent être cumulées :</p>
-<ul style="margin-bottom:20px;color:var(--muted);">
-<li>Duo Play Unreal + Duo Play Top 30 000 → possible</li>
-<li>Duo Play Par Rang + Duo Play Top 30 000 → possible</li>
-<li>Duo Play Unreal + Duo Play Par Rang → impossible</li>
-<li>Deux mêmes formules → impossible</li>
-</ul>
 
 <div class="grid">
 <div class="card">
 <h3>Duo Play Unreal</h3>
-<p>Session complète visant à atteindre le rang Unreal.</p>
+<p>Atteindre directement le rang Unreal.</p>
 <div class="price">9,99 €</div>
-<a class="cta" href="#calculator">Choisir cette formule</a>
+<a class="cta" href="contact.html">Choisir cette formule</a>
 </div>
 
 <div class="card">
 <h3>Duo Play Top 30 000</h3>
-<p>Optimisation pour entrer dans le top 30 000. Peut être cumulé avec Unreal ou Par Rang.</p>
+<p>Atteindre le Top 30 000.</p>
 <div class="price">5,99 €</div>
-<a class="cta" href="#calculator">Choisir cette formule</a>
+<a class="cta" href="contact.html">Choisir cette formule</a>
 </div>
 
 <div class="card">
 <h3>Duo Play Par Rang</h3>
-<p>Monte rang par rang. Prix indiqué par rang.</p>
+<p>Prix par rang, nombre à choisir ci-dessous.</p>
 <div class="price">2,50 € / rang</div>
-<a class="cta" href="#calculator">Choisir cette formule</a>
 </div>
 </div>
 
-<div id="calculator" class="calculator">
-<h3 style="color:var(--neon);margin-bottom:10px;">Calculateur</h3>
-
-<div class="row">
-<label for="formule1">Formule 1</label>
-<select id="formule1">
-<option value="Unreal">Duo Play Unreal</option>
-<option value="Top30k">Duo Play Top 30 000</option>
-<option value="Rang">Duo Play Par Rang</option>
-</select>
-<input type="number" id="qte1" value="1" min="1" placeholder="Quantité">
-</div>
+<div class="calculator">
+<h3 style="color:var(--neon);margin-bottom:10px;">Calculateur Par Rang</h3>
 
 <div class="row">
-<label for="formule2">Formule 2</label>
-<select id="formule2">
-<option value="None">Aucune</option>
-<option value="Unreal">Duo Play Unreal</option>
-<option value="Top30k">Duo Play Top 30 000</option>
-<option value="Rang">Duo Play Par Rang</option>
-</select>
-<input type="number" id="qte2" value="1" min="1" placeholder="Quantité">
+<label for="qte">Nombre de rangs</label>
+<input type="number" id="qte" value="1" min="1" placeholder="Quantité">
 </div>
 
 <div class="total">
@@ -109,12 +83,9 @@ footer {padding:22px;border-top:1px solid rgba(255,0,0,0.1);text-align:center;co
 <span class="sum" id="total">0,00 €</span>
 </div>
 
-<a id="downloadBtn" class="cta" href="contact.html">Choisir cette formule / Contact</a>
+<a id="downloadBtn" class="cta" href="contact.html">Choisir cette formule</a>
 </div>
 
-<div class="disclaimer">
-Les services proposés consistent uniquement à jouer en duo. Aucun accès direct aux comptes n’est demandé. Arthuroser Boosting est indépendant d’Epic Games™ et Fortnite™.
-</div>
 </main>
 
 <footer>
@@ -122,30 +93,16 @@ Les services proposés consistent uniquement à jouer en duo. Aucun accès direc
 </footer>
 
 <script>
-const f1 = document.getElementById('formule1');
-const q1 = document.getElementById('qte1');
-const f2 = document.getElementById('formule2');
-const q2 = document.getElementById('qte2');
+const q = document.getElementById('qte');
 const total = document.getElementById('total');
+const pricePerRank = 2.5;
 
 function updateTotal() {
-  const form1 = f1.value;
-  const form2 = f2.value;
-  const qty1 = parseInt(q1.value)||0;
-  const qty2 = parseInt(q2.value)||0;
-  const prices = {Unreal:9.99, Top30k:5.99, Rang:2.50};
-
-  if(form1===form2 && form2!=="None"){alert("Deux mêmes formules ne peuvent pas être combinées !");f2.value="None";return;}
-  if((form1==="Unreal" && form2==="Rang")||(form1==="Rang" && form2==="Unreal")){alert("Duo Play Unreal et Duo Play Par Rang ne peuvent pas être combinés !");f2.value="None";return;}
-
-  let sum=0;
-  if(form1!=="None") sum+=prices[form1]*qty1;
-  if(form2!=="None") sum+=prices[form2]*qty2;
-
-  total.textContent = sum.toFixed(2).replace('.',',')+" €";
+  let qty = parseInt(q.value)||0;
+  total.textContent = (qty*pricePerRank).toFixed(2).replace('.',',')+" €";
 }
 
-[f1,q1,f2,q2].forEach(el=>el.addEventListener('input',updateTotal));
+q.addEventListener('input',updateTotal);
 updateTotal();
 </script>
 </body>
